@@ -46,7 +46,7 @@ print(creat_url(20191224))
 
 today = input('Input the day you want to fetch:like 20181231\n')
 request_url = []
-for i in [1,2,3,4,5,6]:
+for i in range(1,6):
     for j in range(1,25):
         urls = creat_url(int(today))
         f = lambda x:'0'+str(x) if x<10 else str(x)
@@ -66,13 +66,12 @@ for i in request_url:
         print('News have been download!')
     except:
         print('Url error,pass it!')
-        
+
 with open( './download/' + today +'.txt','w+',encoding='utf-8') as w:
     for new in news:
         w.writelines(new)
         w.writelines('\n'*2)
 print('News have been saved!\n')
-
 
 try:
     import jieba.analyse as analyse
