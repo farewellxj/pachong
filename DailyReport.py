@@ -67,7 +67,7 @@ for i in request_url:
     except:
         print('Url error,pass it!')
         
-with open( today+'.txt','w',encoding='utf-8') as w:
+with open( './download/' + today +'.txt','w+',encoding='utf-8') as w:
     for new in news:
         w.writelines(new)
         w.writelines('\n'*2)
